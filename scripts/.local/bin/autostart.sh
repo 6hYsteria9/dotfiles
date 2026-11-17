@@ -1,5 +1,7 @@
 #!/bin/sh
 
+dbus-update-activation-environment --all 2>/dev/null
+
 killall -q pipewire-pulse wireplumber pipewire
 
 pipewire &
@@ -18,6 +20,9 @@ for b in /sys/class/backlight/*; do
         echo $((max * 75 / 100)) > "$b/brightness" 2>/dev/null
     fi
 done
+
+killall -q dunst
+dunst &
 
 killall -q wbg
 wbg /home/hysteria/pics/everforest.jpg &
