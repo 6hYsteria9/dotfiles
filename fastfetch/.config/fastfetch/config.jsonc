@@ -1,0 +1,56 @@
+{
+  "logo": {
+    "type": "small",
+    "padding": {
+      "top": 1,
+      "left": 2,
+      "right": 3
+    }
+  },
+  "display": {
+    "separator": " 󰄾 "
+  },
+  "modules": [
+    "title",
+    {
+      "type": "os",
+      "key": "os",
+      "keyColor": "green"
+    },
+    {
+      "type": "kernel",
+      "key": "krnl",
+      "keyColor": "green"
+    },
+    {
+      "type": "wm",
+      "key": "wm",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "terminal",
+      "key": "term",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "packages",
+      "key": "pkgs",
+      "keyColor": "blue"
+    },
+    {
+      "type": "uptime",
+      "key": "up",
+      "keyColor": "blue"
+    },
+    {
+      "type": "memory",
+      "key": "mem",
+      "keyColor": "magenta"
+    },
+    "break",
+    {
+      "type": "colors",
+      "symbol": "circle"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+# Build artifacts
+*.o
+*.a
+*.so
+/dwl/dwl/dwl
+*-protocol.h
+*-protocol.c
+
+# OS / Editor clutter
+.DS_Store
+*.swp
+*.swo
+*~

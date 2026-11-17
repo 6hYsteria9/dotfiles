@@ -1,0 +1,4 @@
+#!/bin/sh
+TITLE="${1:-Done}"
+BODY="${2:-Task completed successfully}"
+notify-send -u normal -a "accela" "$TITLE" "$BODY"
