@@ -5,6 +5,8 @@
 /dwl/dwl/dwl
 *-protocol.h
 *-protocol.c
+build/
+.cache/
 
 # OS / Editor clutter
 .DS_Store

@@ -2,6 +2,10 @@
 
 dbus-update-activation-environment --all 2>/dev/null
 
+if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
+    eval $(dbus-launch --sh-syntax --exit-with-session)
+fi
+
 killall -q pipewire-pulse wireplumber pipewire
 
 pipewire &
@@ -27,7 +31,8 @@ dunst &
 killall -q wbg
 wbg /home/hysteria/pics/everforest.jpg &
 
-if which yambar >/dev/null 2>&1; then
-    killall -q yambar
-    yambar &
-fi
+# Start somebar and status module updater
+killall -q yambar dwlb dwl-status.sh somebar somebar-status.sh
+rm -f "$XDG_RUNTIME_DIR"/somebar-*
+somebar &
+somebar-status.sh &

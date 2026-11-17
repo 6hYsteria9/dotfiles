@@ -5,13 +5,13 @@ Minimalist configuration managed with [GNU Stow](https://www.gnu.org/software/st
 ## Managed Packages
 
 - **dunst**: Notification daemon
-- **dwl**: Wayland tiling window manager (suckless-style with custom patches & config)
+- **dwl**: Wayland tiling window manager (suckless-style with IPC patch & Everforest theme)
 - **fastfetch**: Fast system information display
 - **foot**: Lightweight Wayland terminal emulator
 - **fuzzel**: Fast Wayland application launcher
 - **nvim**: Minimalist Neovim setup
-- **yambar**: Modular status panel for Wayland
-- **scripts**: Utility scripts (`autostart.sh`, `yambar-bat.sh`, `notify-done`, `battery-notify.sh`)
+- **somebar**: Minimalist dwl status bar with IPC protocol, Everforest theme & interactive modules
+- **scripts**: Utility scripts (`autostart.sh`, `somebar-status.sh`, `somebar-wifi.sh`, `somebar-bat.sh`, `battery-notify.sh`, `notify-done`)
 
 ## Installation
 
@@ -24,17 +24,27 @@ cd ~/dotfiles
 ### 2. Stow configurations
 To symlink all packages to your home directory:
 ```bash
-stow fastfetch dunst foot fuzzel nvim yambar dwl scripts
+stow fastfetch dunst foot fuzzel nvim somebar dwl scripts
 ```
 
 Or stow individual packages as needed:
 ```bash
-stow nvim
+stow somebar
 ```
 
-### 3. Build & Install DWL
-Since `dwl` is configured at compile time:
+### 3. Build & Install DWL & Somebar
+Both `dwl` and `somebar` are compiled from source:
+
+**DWL:**
 ```bash
 cd ~/dwl
 sudo make install
+```
+
+**Somebar:**
+```bash
+cd ~/somebar
+meson setup build
+ninja -C build
+install -m 755 build/somebar ~/.local/bin/somebar
 ```
